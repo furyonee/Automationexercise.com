@@ -1,31 +1,86 @@
 import dev.failsafe.internal.util.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+import java.util.Random;
 
 public class Util {
-    public void openBasePage(String url) {
+    private WebDriver driver;
+    WebDriverWait wait = new WebDriverWait(Main.driver, Duration.ofSeconds(10));
+
+    public Util(WebDriver driver) {
+        this.driver = driver;
+    }
+
+    void openBasePage(String url) {
         Main.driver.get(url);
     }
 
-    public void navItemIsChosen(String menuItem) {
+    void navItemIsChosen(String menuItem) {
         Main.driver.findElement(By.xpath(String.format(
                 "//ul[@class='nav navbar-nav']/li/a[text()=' %s'][contains(@style, 'color: orange')]", menuItem
         )));
     }
 
-    public void checkCurrentUrl(String url) {
-        Assert.isTrue(
-                Main.driver.getCurrentUrl().equals(url),
-                "Current URL doesn't match the opened page"
-        );
+    void checkCurrentUrl(String url) {
+        Assert.isTrue(Main.driver.getCurrentUrl().equals(url), "Current URL doesn't match the opened page");
     }
 
-    public void generateRandomValue() {
-        // To Do
+    void pageIsOpened(String url, String pageTextElement) {
+        checkCurrentUrl(url);
+        textIsDisplayed(pageTextElement);
+        textIsDisplayed("Full-Fledged practice website for Automation Engineers");
     }
 
-    public void findText(String attribute, String text) {
-        Main.driver.findElement(By.xpath(String.format(
-                "//%s[text()='%s']", attribute, text
-        ))).isDisplayed();
+    void textIsDisplayed(String ...text) {
+        WebElement enterAccountInformationText = Main.driver.findElement(By.xpath(String.format(
+                "//*[text()='%s']", text)));
+        wait.until(ExpectedConditions.visibilityOf(enterAccountInformationText));
+        Assert.isTrue(enterAccountInformationText.isDisplayed(), String.format("\"%s\" text is not found", text));
+    }
+
+    void completeField(By field, String value) {
+        driver.findElement(field)
+                .sendKeys(value);
+    }
+
+    void selectRadioButton(By value) {
+        driver.findElement(value)
+                .click();
+    }
+
+    void selectValueFromList(By field, String value) {
+        driver.findElement(field)
+                .click();
+        driver.findElement(By.xpath(String.format("//option[@value='%s']", value)))
+                .click();
+    }
+
+    void selectCheckbox(String value) {
+        driver.findElement(By.xpath(String.format("//div[@class='checkbox']/label[text()='%s']", value)))
+                .click();
+    }
+
+    void clickButton(String button, String text) {
+        driver.findElement(By.xpath(String.format("//*[@data-qa='%s'][text()='%s']", button, text)))
+                .click();
+    }
+
+    String generateRandomValue() {
+        String dict = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        StringBuilder stringBuilder = new StringBuilder();
+        Random random = new Random();
+        int length = 8;
+        for (int i = 0; i < length; i++) {
+            int index = random.nextInt(dict.length());
+            char randomChar = dict.charAt(index);
+            stringBuilder.append(randomChar);
+        }
+
+        return stringBuilder.toString();
     }
 }
