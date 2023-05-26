@@ -16,23 +16,33 @@ public class Main {
                 .window()
                 .setSize(new Dimension(1366, 720));
 
-        util.openBasePage(Url.BASE_URL);
-        util.pageIsOpened(Url.BASE_URL, "Full-Fledged practice website for Automation Engineers");
-        userEntry.openEntryPage();
-        util.textIsDisplayed("New User Signup!");
-        userEntry.completeUserCredentials();
-        userEntry.clickSignUpButton();
-        util.textIsDisplayed("Enter Account Information");
-        userEntry.completeAccountInfo();
-        userEntry.completeAddressInfo();
-        util.clickButton("create-account", "Create Account");
-        util.textIsDisplayed("Account Created!");
-        util.clickButton("continue-button", "Continue");
-        util.textIsDisplayed(" Logged in as ", util.generateRandomValue());
-        userEntry.clickDeleteAccountButton();
-        util.textIsDisplayed("Account Deleted!");
-        util.clickButton("continue-button", "Continue");
+        // TC-1
+//        util.openBasePage(Url.BASE_URL);
+//        userEntry.openEntryPage();
+//        util.textIsDisplayed("New User Signup!");
+//        userEntry.completeSignUpUserCredentials(EntryPage.USER_NAME, util.generateRandomValue());
+//        userEntry.clickSignUpButton();
+//        util.textIsDisplayed("Enter Account Information");
+//        userEntry.completeAccountInfo();
+//        userEntry.completeAddressInfo();
+//        util.clickButton("create-account", "Create Account");
+//        util.textIsDisplayed("Account Created!");
+//        util.clickButton("continue-button", "Continue");
+//        userEntry.userIsLoggedIn();
+//        userEntry.deleteAccount();
 
-        driver.quit();
+        //TC-2
+        final String USER_EMAIL = util.generateRandomValue();
+
+        util.openBasePage(Url.BASE_URL);
+        userEntry.openEntryPage();
+        userEntry.completeSignUpUserCredentials(EntryPage.USER_NAME, USER_EMAIL);
+        userEntry.signUpUser();
+        util.textIsDisplayed("Login to your account");
+        userEntry.completeLogInUserCredentials(USER_EMAIL, EntryPage.PASSWORD);
+        util.clickButton("login-button", "Login");
+        userEntry.userIsLoggedIn();
+        userEntry.deleteAccount();
+//        driver.quit();
     }
 }

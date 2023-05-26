@@ -11,6 +11,8 @@ public class UserEntry extends Util {
 
     private By signUpNameField = By.xpath("//*[@data-qa='signup-name']");
     private By signUpEmailField = By.xpath("//*[@data-qa='signup-email']");
+    private By loginEmailField = By.xpath("//*[@data-qa='login-email']");
+    private By loginPasswordField = By.xpath("//*[@data-qa='login-password']");
     private By passwordField = By.xpath("//*[@data-qa='password']");
     private By daysField = By.xpath("//select[@data-qa='days']");
     private By monthsField = By.xpath("//select[@data-qa='months']");
@@ -34,6 +36,15 @@ public class UserEntry extends Util {
         this.driver = driver;
     }
 
+    void signUpUser() {
+        clickSignUpButton();
+        completeAccountInfo();
+        completeAddressInfo();
+        clickButton("create-account", "Create Account");
+        clickButton("continue-button", "Continue");
+        clickNavElement(" Logout");
+    }
+
     void openEntryPage() {
         wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//ul[@class='nav navbar-nav']/li/a[text()=' Signup / Login']")))
@@ -45,9 +56,14 @@ public class UserEntry extends Util {
                 .click();
     }
 
-    void completeUserCredentials() {
-        completeField(signUpNameField, generateRandomValue());
-        completeField(signUpEmailField, EntryPage.USER_EMAIL);
+    void completeSignUpUserCredentials(String userName, String email) {
+        completeField(signUpNameField, userName);
+        completeField(signUpEmailField, email + "@user.email");
+    }
+
+    void completeLogInUserCredentials(String email, String password) {
+        completeField(loginEmailField, email + "@user.email");
+        completeField(loginPasswordField, password);
     }
 
     void completeAccountInfo() {
@@ -73,8 +89,14 @@ public class UserEntry extends Util {
         completeField(mobileNumberField, EntryPage.MOBILE_PHONE);
     }
 
-    void clickDeleteAccountButton() {
-        driver.findElement(By.xpath("//li/a[text()=' Delete Account']"))
-                .click();
+    void userIsLoggedIn() {
+        textIsDisplayed(" Logged in as ");
+        textIsDisplayed(EntryPage.USER_NAME);
+    }
+
+    void deleteAccount() {
+        clickNavElement(" Delete Account");
+        textIsDisplayed("Account Deleted!");
+        clickButton("continue-button", "Continue");
     }
 }
