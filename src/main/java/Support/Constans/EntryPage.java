@@ -1,4 +1,4 @@
-package Constans;
+package Support.Constans;
 
 public class EntryPage {
     public final static String USER_NAME = "username";
@@ -12,4 +12,7 @@ public class EntryPage {
     public final static String CITY = "City";
     public final static String ZIPCODE = "0987654321";
     public final static String MOBILE_PHONE = "+1234567890";
+
+    public final static String INCORRECT_EMAIL = "incorrectMail";
+    public final static String INCORRECT_PASSWORD = "incorrectPassword";
 }
