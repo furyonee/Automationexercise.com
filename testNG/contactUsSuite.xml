@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Contact Us Suite">
+    <test name="Contact Us Suite">
+        <classes>
+            <class name="Tests.ContactUs"/>
+        </classes>
+    </test>
+</suite>

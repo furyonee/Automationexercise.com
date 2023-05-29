@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="All Suites">
+    <suite-files>
+            <suite-file path="loginSuite.xml"/>
+            <suite-file path="contactUsSuite.xml"/>
+    </suite-files>
+</suite>
+

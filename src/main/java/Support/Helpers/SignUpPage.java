@@ -1,11 +1,11 @@
-package Support;
+package Support.Helpers;
 
 import Support.Constans.EntryPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class SignUpPage extends Util{
-    WebDriver driver;
+    private WebDriver driver;
 
     public SignUpPage(WebDriver driver) {
         super(driver);

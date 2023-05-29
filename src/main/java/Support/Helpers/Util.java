@@ -1,4 +1,4 @@
-package Support;
+package Support.Helpers;
 
 import dev.failsafe.internal.util.Assert;
 import org.openqa.selenium.By;
@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Random;
 
 public class Util {
-    WebDriver driver;
+    private WebDriver driver;
 
     public Util(WebDriver driver) {
         this.driver = driver;
@@ -79,5 +79,13 @@ public class Util {
         }
 
         return stringBuilder.toString();
+    }
+
+    public void confirmAlert() {
+        driver.switchTo().alert().accept();
+    }
+
+    public WebElement waitForElement(By element) {
+        return new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.elementToBeClickable(element));
     }
 }

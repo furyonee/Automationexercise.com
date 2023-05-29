@@ -1,15 +1,14 @@
 package Tests;
 
 import Support.Constans.*;
-import Support.*;
+import Support.Helpers.*;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 
 
 public class Login {
-    static WebDriver driver = new ChromeDriver();
+    static WebDriver driver = DriverInitialization.getDriver();
 
     Util util = new Util(driver);
     LoginPage loginPage = new LoginPage(driver);
@@ -38,7 +37,7 @@ public class Login {
         navBar.deleteAccount();
     }
 
-    @Test(priority = 1)
+    @Test
     public void loginUser() {
         final String USER_EMAIL = util.generateRandomValue();
 
@@ -57,7 +56,7 @@ public class Login {
         navBar.deleteAccount();
     }
 
-    @Test(priority = 3)
+    @Test
     public void incorrectCredentialsLogin() {
         homePage.openHomePage();
         loginPage.openLoginPage();
@@ -66,7 +65,7 @@ public class Login {
         util.textIsDisplayed("Your email or password is incorrect!");
     }
 
-    @Test(priority = 2)
+    @Test
     public void logOutUser() {
         final String USER_EMAIL = util.generateRandomValue();
 
@@ -84,7 +83,7 @@ public class Login {
         navBar.deleteAccount();
     }
 
-    @Test(priority = 4)
+    @Test
     public void signUpUserWithExistingEmail() {
         final String USER_EMAIL = util.generateRandomValue();
 
@@ -103,10 +102,5 @@ public class Login {
         loginPage.completeLogInUserCredentials(USER_EMAIL, EntryPage.PASSWORD);
         loginPage.clickLoginButton();
         navBar.deleteAccount();
-    }
-
-    @AfterClass
-    public static void tearDown() {
-        driver.quit();
     }
 }

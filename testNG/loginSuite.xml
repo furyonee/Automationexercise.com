@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Login Suite">
+    <test name="Login Suite">
+        <classes>
+            <class name="Tests.Login">
+                <methods>
+                    <include name="registerUser" />
+                    <include name="loginUser" />
+                    <include name="logOutUser" />
+                    <include name="incorrectCredentialsLogin" />
+                    <include name="signUpUserWithExistingEmail" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
