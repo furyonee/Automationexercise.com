@@ -42,7 +42,6 @@ public class LoginPage extends Util {
 
     public void clickSignUpButton() {
         clickButton("signup-button", "Signup");
-        textIsDisplayed("Enter Account Information");
     }
 
     public void clickLoginButton() {

@@ -1,6 +1,7 @@
 package Support;
 
 import Support.Constans.EntryPage;
+import Support.Constans.Url;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -20,6 +21,9 @@ public class NavBar extends Util {
     public void clickLogoutItem() {
         driver.findElement(logoutItem)
                 .click();
+        textIsDisplayed(" Signup / Login");
+        textIsNotDisplayed(" Logout");
+        checkCurrentUrl(Url.LOGIN_PAGE);
     }
 
     public void userIsLoggedIn() {
