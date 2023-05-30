@@ -3,25 +3,20 @@ package Support.Helpers;
 import Support.Constans.EntryPage;
 import Support.Constans.Url;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class NavBar extends Util {
-    private  WebDriver driver;
+    static WebDriver driver = DriverInitialization.getDriver();
 
     public NavBar(WebDriver driver) {
         super(driver);
-        this.driver = driver;
     }
 
-    private final By logoutItem =  By.xpath("//ul[@class='nav navbar-nav']/li/a[text()=' Logout']");
-    private final By deleteAccountItem =  By.xpath("//ul[@class='nav navbar-nav']/li/a[text()=' Delete Account']");
-    private final By signUpItem =  By.xpath("//ul[@class='nav navbar-nav']/li/a[text()=' Signup / Login']");
-    private final By contactUsItem =  By.xpath("//ul[@class='nav navbar-nav']/li/a[text()=' Contact us']");
+    private final By logoutItem = By.xpath("//ul[@class='nav navbar-nav']/li/a[text()=' Logout']");
+    private final By deleteAccountItem = By.xpath("//ul[@class='nav navbar-nav']/li/a[text()=' Delete Account']");
+    private final By signUpItem = By.xpath("//ul[@class='nav navbar-nav']/li/a[text()=' Signup / Login']");
+    private final By contactUsItem = By.xpath("//ul[@class='nav navbar-nav']/li/a[text()=' Contact us']");
+    private final By testCasesItem = By.xpath("//ul[@class='nav navbar-nav']/li/a[text()=' Test Cases']");
 
     public void clickLogoutItem() {
         driver.findElement(logoutItem)
@@ -36,15 +31,22 @@ public class NavBar extends Util {
         textIsDisplayed(EntryPage.USER_NAME);
     }
 
-    public void deleteAccount() throws NoSuchElementException {
+    public void deleteAccount() {
         clickDeleteAccountItem();
         textIsDisplayed("Account Deleted!");
         clickButton("continue-button", "Continue");
         textIsNotDisplayed(" Logged in as ");
     }
 
-    public By getSignUpItem() {
-        return signUpItem;
+    public void clickSignUpItem() {
+        waitForElement(signUpItem)
+                .click();
+        checkCurrentUrl(Url.LOGIN_PAGE);
+    }
+
+    public void clickTestCasesItem() {
+        waitForElement(testCasesItem)
+                .click();
     }
 
     public void clickContactUsItem() {

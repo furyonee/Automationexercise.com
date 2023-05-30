@@ -82,10 +82,13 @@ public class Util {
     }
 
     public void confirmAlert() {
-        driver.switchTo().alert().accept();
+        driver.switchTo()
+                .alert()
+                .accept();
     }
 
     public WebElement waitForElement(By element) {
-        return new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.elementToBeClickable(element));
+        return new WebDriverWait(driver,
+                Duration.ofSeconds(5)).until(ExpectedConditions.visibilityOfElementLocated(element));
     }
 }

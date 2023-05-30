@@ -2,9 +2,7 @@ package Tests;
 
 import Support.Constans.Url;
 import Support.Helpers.*;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 
 public class ContactUs {

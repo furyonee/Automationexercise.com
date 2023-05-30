@@ -4,13 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class LoginPage extends Util {
-    private WebDriver driver;
+    static WebDriver driver = DriverInitialization.getDriver();
 
     NavBar navBar = new NavBar(driver);
 
     public LoginPage(WebDriver driver) {
         super(driver);
-        this.driver = driver;
     }
 
     private final By signUpNameField = By.xpath("//*[@data-qa='signup-name']");
@@ -29,8 +28,7 @@ public class LoginPage extends Util {
     }
 
     public void openLoginPage() {
-        waitForElement(navBar.getSignUpItem())
-                .click();
+        navBar.clickSignUpItem();
         textIsDisplayed("New User Signup!");
         textIsDisplayed("Login to your account");
     }
