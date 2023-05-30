@@ -1,6 +1,7 @@
 package Support.Helpers;
 
 import Support.Constans.ContactUsValues;
+import Support.Constans.Url;
 import org.checkerframework.checker.units.qual.C;
 import org.openqa.selenium.By;
 import org.openqa.selenium.InvalidArgumentException;
@@ -10,7 +11,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.io.File;
 
 public class ContactUsPage extends Util {
-    WebDriver driver;
+    private WebDriver driver;
+
+    NavBar navBar = new NavBar(driver);
 
     public ContactUsPage(WebDriver driver) {
         super(driver);
@@ -24,6 +27,12 @@ public class ContactUsPage extends Util {
     private final By fileInput = By.xpath("//input[@type='file']");
     private final By submitButton = By.xpath("//input[@data-qa='submit-button']");
     private final By homeButton = By.xpath("//a[@class='btn btn-success']");
+
+    public void openContactUsPage() {
+        driver.findElement(navBar.getContactUsItem())
+                .click();
+        textIsDisplayed("Get In Touch");
+    }
 
     public void completeContactUsForm() {
         completeField(nameField, ContactUsValues.NAME);
@@ -50,5 +59,9 @@ public class ContactUsPage extends Util {
     public void clickHomeButton() {
         waitForElement(homeButton)
                 .click();
+        pageIsOpened(Url.HOME_PAGE,
+                "All QA engineers can use this website for automation practice and API testing either " +
+                        "they are at beginner or advance level. This is for everybody to help them brush up their " +
+                        "automation skills.");
     }
 }

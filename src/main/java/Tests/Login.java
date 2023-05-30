@@ -34,7 +34,7 @@ public class Login {
         signUpPage.completeAddressInfo();
         signUpPage.finishAccountCreation();
         navBar.userIsLoggedIn();
-        navBar.deleteAccount();
+        loginPage.deleteAccount();
     }
 
     @Test
@@ -47,13 +47,13 @@ public class Login {
         // Sing Up a new user so independent test data is created (Imagine there's a user creation POST request).
         loginPage.clickSignUpButton();
         signUpPage.completeUserInfo();
-        navBar.clickLogoutItem();
+        loginPage.logOutUser();
         // Finished user creation
         loginPage.openLoginPage();
         loginPage.completeLogInUserCredentials(USER_EMAIL, EntryPage.PASSWORD);
         loginPage.clickLoginButton();
         navBar.userIsLoggedIn();
-        navBar.deleteAccount();
+        loginPage.deleteAccount();
     }
 
     @Test
@@ -76,11 +76,11 @@ public class Login {
         loginPage.clickSignUpButton();
         signUpPage.completeUserInfo();
         // Finished user creation
-        navBar.clickLogoutItem();
+        loginPage.logOutUser();
         // Delete user data
         loginPage.completeLogInUserCredentials(USER_EMAIL, EntryPage.PASSWORD);
         loginPage.clickLoginButton();
-        navBar.deleteAccount();
+        loginPage.deleteAccount();
     }
 
     @Test
@@ -93,7 +93,7 @@ public class Login {
         loginPage.completeSignUpUserCredentials(EntryPage.USER_NAME, USER_EMAIL);
         loginPage.clickSignUpButton();
         signUpPage.completeUserInfo();
-        navBar.clickLogoutItem();
+        loginPage.logOutUser();
         // Finished user creation
         loginPage.completeSignUpUserCredentials(EntryPage.USER_NAME, USER_EMAIL);
         loginPage.clickSignUpButton();
@@ -101,6 +101,6 @@ public class Login {
         // Delete user data
         loginPage.completeLogInUserCredentials(USER_EMAIL, EntryPage.PASSWORD);
         loginPage.clickLoginButton();
-        navBar.deleteAccount();
+        loginPage.deleteAccount();
     }
 }

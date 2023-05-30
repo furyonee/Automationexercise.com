@@ -1,15 +1,17 @@
 package Support.Helpers;
 
+import Support.Constans.Url;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class LoginPage extends Util {
-    static WebDriver driver = DriverInitialization.getDriver();
+    private WebDriver driver;
 
     NavBar navBar = new NavBar(driver);
 
     public LoginPage(WebDriver driver) {
         super(driver);
+        this.driver = driver;
     }
 
     private final By signUpNameField = By.xpath("//*[@data-qa='signup-name']");
@@ -28,9 +30,9 @@ public class LoginPage extends Util {
     }
 
     public void openLoginPage() {
-        navBar.clickSignUpItem();
-        textIsDisplayed("New User Signup!");
-        textIsDisplayed("Login to your account");
+        waitForElement(navBar.getSignUpItem())
+                .click();
+        textIsDisplayed("New User Signup!", "Login to your account");
     }
 
     public void clickSignUpButton() {
@@ -39,5 +41,21 @@ public class LoginPage extends Util {
 
     public void clickLoginButton() {
         clickButton("login-button", "Login");
+    }
+
+    public void deleteAccount() {
+        waitForElement(navBar.getDeleteAccountItem())
+                .click();
+        textIsDisplayed("Account Deleted!");
+        clickButton("continue-button", "Continue");
+        textIsNotDisplayed(" Logged in as ");
+    }
+
+    public void logOutUser() {
+        waitForElement(navBar.getLogoutItem())
+                .click();
+        textIsDisplayed(" Signup / Login");
+        textIsNotDisplayed(" Logout");
+        checkCurrentUrl(Url.LOGIN_PAGE);
     }
 }

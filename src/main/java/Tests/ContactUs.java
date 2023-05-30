@@ -10,13 +10,12 @@ public class ContactUs {
 
     HomePage homePage = new HomePage(driver);
     ContactUsPage contactUsPage = new ContactUsPage(driver);
-    NavBar navBar = new NavBar(driver);
     Util util = new Util(driver);
 
     @Test
     public void completeContactUsForm() {
         homePage.openHomePage();
-        navBar.clickContactUsItem();
+        contactUsPage.openContactUsPage();
         util.textIsDisplayed("Get In Touch");
         contactUsPage.completeContactUsForm();
         contactUsPage.uploadFile();
@@ -24,9 +23,5 @@ public class ContactUs {
         util.confirmAlert();
         util.textIsDisplayed("Success! Your details have been submitted successfully.");
         contactUsPage.clickHomeButton();
-        util.pageIsOpened(Url.HOME_PAGE,
-                "All QA engineers can use this website for automation practice and API testing either " +
-                        "they are at beginner or advance level. This is for everybody to help them brush up their " +
-                        "automation skills.");
     }
 }

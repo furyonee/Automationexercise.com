@@ -4,6 +4,7 @@
             <suite-file path="loginSuite.xml"/>
             <suite-file path="contactUsSuite.xml"/>
             <suite-file path="testCasesSuite.xml"/>
+            <suite-file path="productsSuite.xml"></suite-file>
     </suite-files>
 </suite>
 

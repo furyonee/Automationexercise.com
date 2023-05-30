@@ -1,13 +1,10 @@
 package Support.Helpers;
 
 import Support.Constans.EntryPage;
-import Support.Constans.Url;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class NavBar extends Util {
-    static WebDriver driver = DriverInitialization.getDriver();
-
     public NavBar(WebDriver driver) {
         super(driver);
     }
@@ -17,45 +14,33 @@ public class NavBar extends Util {
     private final By signUpItem = By.xpath("//ul[@class='nav navbar-nav']/li/a[text()=' Signup / Login']");
     private final By contactUsItem = By.xpath("//ul[@class='nav navbar-nav']/li/a[text()=' Contact us']");
     private final By testCasesItem = By.xpath("//ul[@class='nav navbar-nav']/li/a[text()=' Test Cases']");
-
-    public void clickLogoutItem() {
-        driver.findElement(logoutItem)
-                .click();
-        textIsDisplayed(" Signup / Login");
-        textIsNotDisplayed(" Logout");
-        checkCurrentUrl(Url.LOGIN_PAGE);
-    }
+    private final By productsItem = By.xpath("//ul[@class='nav navbar-nav']/li/a[text()=' Products']");
 
     public void userIsLoggedIn() {
-        textIsDisplayed(" Logged in as ");
-        textIsDisplayed(EntryPage.USER_NAME);
+        textIsDisplayed(" Logged in as ", EntryPage.USER_NAME);
     }
 
-    public void deleteAccount() {
-        clickDeleteAccountItem();
-        textIsDisplayed("Account Deleted!");
-        clickButton("continue-button", "Continue");
-        textIsNotDisplayed(" Logged in as ");
+    public By getLogoutItem() {
+        return logoutItem;
     }
 
-    public void clickSignUpItem() {
-        waitForElement(signUpItem)
-                .click();
-        checkCurrentUrl(Url.LOGIN_PAGE);
+    public By getSignUpItem() {
+        return signUpItem;
     }
 
-    public void clickTestCasesItem() {
-        waitForElement(testCasesItem)
-                .click();
+    public By getTestCasesItem() {
+        return testCasesItem;
     }
 
-    public void clickContactUsItem() {
-        waitForElement(contactUsItem)
-                .click();
+    public By getContactUsItem() {
+        return contactUsItem;
     }
 
-    private void clickDeleteAccountItem() {
-        driver.findElement(deleteAccountItem)
-                .click();
+    public By getProductsItem() {
+        return productsItem;
+    }
+
+    public By getDeleteAccountItem() {
+        return deleteAccountItem;
     }
 }

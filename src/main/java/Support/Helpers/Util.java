@@ -19,7 +19,7 @@ public class Util {
     }
 
     public void checkCurrentUrl(String url) {
-        Assert.isTrue(driver.getCurrentUrl().equals(url), "Current URL doesn't match the opened page");
+        Assert.isTrue(driver.getCurrentUrl().equals(url), "URL doesn't match the opened page");
     }
 
     public void pageIsOpened(String url, String pageTextElement) {
@@ -27,11 +27,13 @@ public class Util {
         textIsDisplayed(pageTextElement);
     }
 
-    public void textIsDisplayed(String text) {
-        WebElement enterAccountInformationText = driver.findElement(By.xpath(String.format(
-                "//*[text()='%s']", text)));
-        new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.visibilityOf(enterAccountInformationText));
-        Assert.isTrue(enterAccountInformationText.isDisplayed(), String.format("\"%s\" text is not found", text));
+    public void textIsDisplayed(String ...text) {
+        for (String s : text) {
+            WebElement enterAccountInformationText = driver.findElement(By.xpath(String.format(
+                    "//*[text()='%s']", s)));
+            new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.visibilityOf(enterAccountInformationText));
+            Assert.isTrue(enterAccountInformationText.isDisplayed(), String.format("\"%s\" text is not found", text));
+        }
     }
 
     public void textIsNotDisplayed(String text) {

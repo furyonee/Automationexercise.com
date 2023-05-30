@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Products Suite">
+    <test name="Products Suite">
+        <classes>
+            <class name="Tests.Products">
+                <methods>
+                    <include name="verifyProductsPageContent"/>
+                    <include name="searchProduct"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
