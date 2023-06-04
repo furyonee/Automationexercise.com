@@ -4,6 +4,7 @@ import dev.failsafe.internal.util.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -92,5 +93,11 @@ public class Util {
     public WebElement waitForElement(By element) {
         return new WebDriverWait(driver,
                 Duration.ofSeconds(5)).until(ExpectedConditions.visibilityOfElementLocated(element));
+    }
+
+    public void scrollTo(WebElement element) {
+        new Actions(driver)
+                .scrollToElement(element)
+                .perform();
     }
 }

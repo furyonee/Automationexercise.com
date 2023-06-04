@@ -14,19 +14,19 @@ public class LoginPage extends Util {
         this.driver = driver;
     }
 
-    private final By signUpNameField = By.xpath("//*[@data-qa='signup-name']");
-    private final By signUpEmailField = By.xpath("//*[@data-qa='signup-email']");
-    private final By loginEmailField = By.xpath("//*[@data-qa='login-email']");
-    private final By loginPasswordField = By.xpath("//*[@data-qa='login-password']");
+    private final By SIGN_UP_NAME_FIELD = By.xpath("//*[@data-qa='signup-name']");
+    private final By SING_UP_EMAIL_FIELD = By.xpath("//*[@data-qa='signup-email']");
+    private final By LOGIN_EMAIL_FIELD = By.xpath("//*[@data-qa='login-email']");
+    private final By LOGIN_PASSWORD_FIELD = By.xpath("//*[@data-qa='login-password']");
 
     public void completeSignUpUserCredentials(String userName, String email) {
-        completeField(signUpNameField, userName);
-        completeField(signUpEmailField, email + "@user.email");
+        completeField(SIGN_UP_NAME_FIELD, userName);
+        completeField(SING_UP_EMAIL_FIELD, email + "@user.email");
     }
 
     public void completeLogInUserCredentials(String email, String password) {
-        completeField(loginEmailField, email + "@user.email");
-        completeField(loginPasswordField, password);
+        completeField(LOGIN_EMAIL_FIELD, email + "@user.email");
+        completeField(LOGIN_PASSWORD_FIELD, password);
     }
 
     public void openLoginPage() {

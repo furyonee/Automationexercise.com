@@ -31,7 +31,7 @@ public class ProductsPage extends Util {
         textIsDisplayed("All Products");
     }
 
-    public void productListIsVisible() {
+    public void productsListIsVisible() {
         waitForElement(productItems);
         List<WebElement> elements = driver.findElements(By.xpath(productsItem));
         Assert.isTrue(elements.size() > 0, "The product list is empty");

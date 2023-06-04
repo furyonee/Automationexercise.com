@@ -1,6 +1,5 @@
 package Tests;
 
-import Support.Constans.Url;
 import Support.Helpers.*;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
@@ -9,8 +8,8 @@ public class ContactUs {
     static WebDriver driver = DriverInitialization.getDriver();
 
     HomePage homePage = new HomePage(driver);
-    ContactUsPage contactUsPage = new ContactUsPage(driver);
     Util util = new Util(driver);
+    ContactUsPage contactUsPage = new ContactUsPage(driver);
 
     @Test
     public void completeContactUsForm() {

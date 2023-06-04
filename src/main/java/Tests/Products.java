@@ -16,7 +16,7 @@ public class Products {
     public void verifyProductsPageContent() {
         homePage.openHomePage();
         productsPage.openProductsPage();
-        productsPage.productListIsVisible();
+        productsPage.productsListIsVisible();
         productsPage.openProductByOrderNumber(1);
         productsPage.verifyProductDetailsVisibility();
     }

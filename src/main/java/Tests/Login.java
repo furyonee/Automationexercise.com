@@ -11,10 +11,10 @@ public class Login {
     static WebDriver driver = DriverInitialization.getDriver();
 
     Util util = new Util(driver);
-    LoginPage loginPage = new LoginPage(driver);
     HomePage homePage = new HomePage(driver);
     SignUpPage signUpPage = new SignUpPage(driver);
     NavBar navBar = new NavBar(driver);
+    LoginPage loginPage = new LoginPage(driver);
 
     @BeforeClass
     public static void setUp() {

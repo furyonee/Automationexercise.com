@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Home Suite">
+    <test name="Home Suite">
+        <classes>
+            <class name="Tests.Home"/>
+        </classes>
+    </test>
+</suite>
