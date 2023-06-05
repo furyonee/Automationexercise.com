@@ -26,13 +26,13 @@ public class Login {
     @Test
     public void registerUser() {
         homePage.openHomePage();
-        loginPage.openLoginPage();
-        loginPage.completeSignUpUserCredentials(EntryPage.USER_NAME, util.generateRandomValue());
-        loginPage.clickSignUpButton();
-        util.textIsDisplayed("Enter Account Information");
-        signUpPage.completeAccountInfo();
-        signUpPage.completeAddressInfo();
-        signUpPage.finishAccountCreation();
+        loginPage.openLoginPage()
+                .completeSignUpUserCredentials(EntryPage.USER_NAME, util.generateRandomValue())
+                .clickSignUpButton()
+                .textIsDisplayed("Enter Account Information");
+        signUpPage.completeAccountInfo()
+                .completeAddressInfo()
+                .finishAccountCreation();
         navBar.userIsLoggedIn();
         loginPage.deleteAccount();
     }
@@ -42,16 +42,16 @@ public class Login {
         final String USER_EMAIL = util.generateRandomValue();
 
         homePage.openHomePage();
-        loginPage.openLoginPage();
-        loginPage.completeSignUpUserCredentials(EntryPage.USER_NAME, USER_EMAIL);
+        loginPage.openLoginPage()
+                .completeSignUpUserCredentials(EntryPage.USER_NAME, USER_EMAIL);
         // Sing Up a new user so independent test data is created (Imagine there's a user creation POST request).
         loginPage.clickSignUpButton();
         signUpPage.completeUserInfo();
         loginPage.logOutUser();
         // Finished user creation
-        loginPage.openLoginPage();
-        loginPage.completeLogInUserCredentials(USER_EMAIL, EntryPage.PASSWORD);
-        loginPage.clickLoginButton();
+        loginPage.openLoginPage()
+                .completeLogInUserCredentials(USER_EMAIL, EntryPage.PASSWORD)
+                .clickLoginButton();
         navBar.userIsLoggedIn();
         loginPage.deleteAccount();
     }
@@ -59,10 +59,10 @@ public class Login {
     @Test
     public void incorrectCredentialsLogin() {
         homePage.openHomePage();
-        loginPage.openLoginPage();
-        loginPage.completeLogInUserCredentials(EntryPage.INCORRECT_EMAIL, EntryPage.INCORRECT_PASSWORD);
-        loginPage.clickLoginButton();
-        util.textIsDisplayed("Your email or password is incorrect!");
+        loginPage.openLoginPage()
+                .completeLogInUserCredentials(EntryPage.INCORRECT_EMAIL, EntryPage.INCORRECT_PASSWORD)
+                .clickLoginButton()
+                .textIsDisplayed("Your email or password is incorrect!");
     }
 
     @Test
@@ -70,17 +70,17 @@ public class Login {
         final String USER_EMAIL = util.generateRandomValue();
 
         homePage.openHomePage();
-        loginPage.openLoginPage();
-        loginPage.completeSignUpUserCredentials(EntryPage.USER_NAME, USER_EMAIL);
+        loginPage.openLoginPage()
+                .completeSignUpUserCredentials(EntryPage.USER_NAME, USER_EMAIL);
         // Sing Up a new user so independent test data is created (Imagine there's a user creation POST request).
         loginPage.clickSignUpButton();
         signUpPage.completeUserInfo();
         // Finished user creation
         loginPage.logOutUser();
         // Delete user data
-        loginPage.completeLogInUserCredentials(USER_EMAIL, EntryPage.PASSWORD);
-        loginPage.clickLoginButton();
-        loginPage.deleteAccount();
+        loginPage.completeLogInUserCredentials(USER_EMAIL, EntryPage.PASSWORD)
+                .clickLoginButton()
+                .deleteAccount();
     }
 
     @Test
@@ -90,17 +90,17 @@ public class Login {
         homePage.openHomePage();
         loginPage.openLoginPage();
         // Sing Up a new user so independent test data is created (Imagine there's a user creation POST request).
-        loginPage.completeSignUpUserCredentials(EntryPage.USER_NAME, USER_EMAIL);
-        loginPage.clickSignUpButton();
+        loginPage.completeSignUpUserCredentials(EntryPage.USER_NAME, USER_EMAIL)
+                .clickSignUpButton();
         signUpPage.completeUserInfo();
         loginPage.logOutUser();
         // Finished user creation
-        loginPage.completeSignUpUserCredentials(EntryPage.USER_NAME, USER_EMAIL);
-        loginPage.clickSignUpButton();
-        util.textIsDisplayed("Email Address already exist!");
+        loginPage.completeSignUpUserCredentials(EntryPage.USER_NAME, USER_EMAIL)
+                .clickSignUpButton()
+                .textIsDisplayed("Email Address already exist!");
         // Delete user data
-        loginPage.completeLogInUserCredentials(USER_EMAIL, EntryPage.PASSWORD);
-        loginPage.clickLoginButton();
-        loginPage.deleteAccount();
+        loginPage.completeLogInUserCredentials(USER_EMAIL, EntryPage.PASSWORD)
+                .clickLoginButton()
+                .deleteAccount();
     }
 }

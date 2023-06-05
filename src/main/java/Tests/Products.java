@@ -15,16 +15,16 @@ public class Products {
     @Test
     public void verifyProductsPageContent() {
         homePage.openHomePage();
-        productsPage.openProductsPage();
-        productsPage.productsListIsVisible();
-        productsPage.openProductByOrderNumber(1);
-        productsPage.verifyProductDetailsVisibility();
+        productsPage.openProductsPage()
+                .productsListIsVisible()
+                .openProductByOrderNumber(1)
+                .verifyProductDetailsVisibility();
     }
 
     @Test
     public void searchProduct() {
         homePage.openHomePage();
-        productsPage.openProductsPage();
-        productsPage.searchProduct();
+        productsPage.openProductsPage()
+                .searchProduct();
     }
 }

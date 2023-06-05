@@ -5,11 +5,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class SignUpPage extends Util{
-    private WebDriver driver;
-
     public SignUpPage(WebDriver driver) {
         super(driver);
-        this.driver = driver;
+        DriverInitialization.getDriver();
     }
 
     private final By passwordField = By.xpath("//*[@data-qa='password']");
@@ -28,7 +26,7 @@ public class SignUpPage extends Util{
     private final By mobileNumberField = By.xpath("//*[@data-qa='mobile_number']");
     private final By maleGender = By.xpath("//*[@type='radio'][@id='id_gender1']");
 
-    public void completeAccountInfo() {
+    public SignUpPage completeAccountInfo() {
         selectRadioButton(maleGender);
         completeField(passwordField, EntryPage.PASSWORD);
         selectValueFromList(daysField, "31");
@@ -36,9 +34,10 @@ public class SignUpPage extends Util{
         selectValueFromList(yearsField, "1900");
         selectCheckbox("Sign up for our newsletter!");
         selectCheckbox("Receive special offers from our partners!");
+        return this;
     }
 
-    public void completeAddressInfo() {
+    public SignUpPage completeAddressInfo() {
         completeField(firstNameField, EntryPage.FIRST_NAME);
         completeField(lastNameField, EntryPage.LAST_NAME);
         completeField(companyField, EntryPage.COMPANY);
@@ -49,18 +48,21 @@ public class SignUpPage extends Util{
         completeField(cityField, EntryPage.CITY);
         completeField(zipcodeField, EntryPage.ZIPCODE);
         completeField(mobileNumberField, EntryPage.MOBILE_PHONE);
+        return this;
     }
 
-    public void finishAccountCreation() {
+    public SignUpPage finishAccountCreation() {
         clickButton("create-account", "Create Account");
         textIsDisplayed("Account Created!");
         clickButton("continue-button", "Continue");
+        return this;
     }
 
-    public void completeUserInfo() {
+    public SignUpPage completeUserInfo() {
         completeAccountInfo();
         completeAddressInfo();
         clickButton("create-account", "Create Account");
         clickButton("continue-button", "Continue");
+        return this;
     }
 }

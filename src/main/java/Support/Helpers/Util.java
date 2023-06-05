@@ -13,61 +13,70 @@ import java.util.List;
 import java.util.Random;
 
 public class Util {
-    private WebDriver driver;
+    static WebDriver driver = DriverInitialization.getDriver();
 
     public Util(WebDriver driver) {
-        this.driver = driver;
+        Util.driver = driver;
     }
 
-    public void checkCurrentUrl(String url) {
+    public Util checkCurrentUrl(String url) {
         Assert.isTrue(driver.getCurrentUrl().equals(url), "URL doesn't match the opened page");
+        return this;
     }
 
-    public void pageIsOpened(String url, String pageTextElement) {
+    public Util pageIsOpened(String url, String pageTextElement) {
         checkCurrentUrl(url);
         textIsDisplayed(pageTextElement);
+        return this;
     }
 
-    public void textIsDisplayed(String ...text) {
+    public Util textIsDisplayed(String ...text) {
         for (String s : text) {
             WebElement enterAccountInformationText = driver.findElement(By.xpath(String.format(
                     "//*[text()='%s']", s)));
             new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.visibilityOf(enterAccountInformationText));
             Assert.isTrue(enterAccountInformationText.isDisplayed(), String.format("\"%s\" text is not found", text));
         }
+        return this;
     }
 
-    public void textIsNotDisplayed(String text) {
+    public Util textIsNotDisplayed(String text) {
         List<WebElement> elements = driver.findElements(By.xpath(String.format(
                 "//*[text()='%s']", text)));
         Assert.isTrue(elements.size() == 0, String.format("\"%s\" text exists. Expected: \"Not\" ", text));
+        return this;
     }
 
-    public void completeField(By field, String value) {
+    public Util completeField(By field, String value) {
         driver.findElement(field)
                 .sendKeys(value);
+        return this;
     }
 
-    public void selectRadioButton(By value) {
+    public Util selectRadioButton(By value) {
         driver.findElement(value)
                 .click();
+        return this;
     }
 
-    public void selectValueFromList(By field, String value) {
+    public Util selectValueFromList(By field, String value) {
         driver.findElement(field)
                 .click();
         driver.findElement(By.xpath(String.format("//option[@value='%s']", value)))
                 .click();
+        return this;
     }
 
-    public void selectCheckbox(String value) {
+    public Util selectCheckbox(String value) {
         driver.findElement(By.xpath(String.format("//div[@class='checkbox']/label[text()='%s']", value)))
                 .click();
+        return this;
     }
 
-    public void clickButton(String button, String text) {
+    public Util clickButton(String button, String text) {
         driver.findElement(By.xpath(String.format("//*[@data-qa='%s'][text()='%s']", button, text)))
                 .click();
+        return this;
     }
 
     public String generateRandomValue() {
@@ -84,10 +93,11 @@ public class Util {
         return stringBuilder.toString();
     }
 
-    public void confirmAlert() {
+    public Util confirmAlert() {
         driver.switchTo()
                 .alert()
                 .accept();
+        return this;
     }
 
     public WebElement waitForElement(By element) {
@@ -95,9 +105,10 @@ public class Util {
                 Duration.ofSeconds(5)).until(ExpectedConditions.visibilityOfElementLocated(element));
     }
 
-    public void scrollTo(WebElement element) {
+    public Util scrollTo(WebElement element) {
         new Actions(driver)
                 .scrollToElement(element)
                 .perform();
+        return this;
     }
 }

@@ -5,13 +5,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class LoginPage extends Util {
-    private WebDriver driver;
+    static WebDriver driver = DriverInitialization.getDriver();
 
     NavBar navBar = new NavBar(driver);
 
     public LoginPage(WebDriver driver) {
         super(driver);
-        this.driver = driver;
     }
 
     private final By SIGN_UP_NAME_FIELD = By.xpath("//*[@data-qa='signup-name']");
@@ -19,43 +18,50 @@ public class LoginPage extends Util {
     private final By LOGIN_EMAIL_FIELD = By.xpath("//*[@data-qa='login-email']");
     private final By LOGIN_PASSWORD_FIELD = By.xpath("//*[@data-qa='login-password']");
 
-    public void completeSignUpUserCredentials(String userName, String email) {
+    public LoginPage completeSignUpUserCredentials(String userName, String email) {
         completeField(SIGN_UP_NAME_FIELD, userName);
         completeField(SING_UP_EMAIL_FIELD, email + "@user.email");
+        return this;
     }
 
-    public void completeLogInUserCredentials(String email, String password) {
+    public LoginPage completeLogInUserCredentials(String email, String password) {
         completeField(LOGIN_EMAIL_FIELD, email + "@user.email");
         completeField(LOGIN_PASSWORD_FIELD, password);
+        return this;
     }
 
-    public void openLoginPage() {
+    public LoginPage openLoginPage() {
         waitForElement(navBar.getSignUpItem())
                 .click();
         textIsDisplayed("New User Signup!", "Login to your account");
+        return this;
     }
 
-    public void clickSignUpButton() {
+    public LoginPage clickSignUpButton() {
         clickButton("signup-button", "Signup");
+        return this;
     }
 
-    public void clickLoginButton() {
+    public LoginPage clickLoginButton() {
         clickButton("login-button", "Login");
+        return this;
     }
 
-    public void deleteAccount() {
+    public LoginPage deleteAccount() {
         waitForElement(navBar.getDeleteAccountItem())
                 .click();
         textIsDisplayed("Account Deleted!");
         clickButton("continue-button", "Continue");
         textIsNotDisplayed(" Logged in as ");
+        return this;
     }
 
-    public void logOutUser() {
+    public LoginPage logOutUser() {
         waitForElement(navBar.getLogoutItem())
                 .click();
         textIsDisplayed(" Signup / Login");
         textIsNotDisplayed(" Logout");
         checkCurrentUrl(Url.LOGIN_PAGE);
+        return this;
     }
 }

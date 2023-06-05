@@ -15,6 +15,7 @@ public class NavBar extends Util {
     private final By contactUsItem = By.xpath("//ul[@class='nav navbar-nav']/li/a[text()=' Contact us']");
     private final By testCasesItem = By.xpath("//ul[@class='nav navbar-nav']/li/a[text()=' Test Cases']");
     private final By productsItem = By.xpath("//ul[@class='nav navbar-nav']/li/a[text()=' Products']");
+    private final By cartItem = By.xpath("//ul[@class='nav navbar-nav']/li/a[text()=' Cart']");
 
     public void userIsLoggedIn() {
         textIsDisplayed(" Logged in as ", EntryPage.USER_NAME);
@@ -42,5 +43,9 @@ public class NavBar extends Util {
 
     public By getDeleteAccountItem() {
         return deleteAccountItem;
+    }
+
+    public By getCartItem() {
+        return cartItem;
     }
 }

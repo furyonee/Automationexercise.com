@@ -9,13 +9,12 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public class ProductsPage extends Util {
-    private WebDriver driver;
+    static WebDriver driver = DriverInitialization.getDriver();
 
     NavBar navBar = new NavBar(driver);
 
     public ProductsPage(WebDriver driver) {
         super(driver);
-        this.driver = driver;
     }
 
     private final By productItems = By.xpath("//div[@class='features_items']");
@@ -25,29 +24,33 @@ public class ProductsPage extends Util {
     private final String[] firstProductDetails = {"Blue Top", "Category: Women > Tops", "Rs. 500", "Availability:",
             " In Stock", "Brand:", " Polo"};
 
-    public void openProductsPage() {
+    public ProductsPage openProductsPage() {
         waitForElement(navBar.getProductsItem())
                 .click();
         textIsDisplayed("All Products");
+        return this;
     }
 
-    public void productsListIsVisible() {
+    public ProductsPage productsListIsVisible() {
         waitForElement(productItems);
         List<WebElement> elements = driver.findElements(By.xpath(productsItem));
         Assert.isTrue(elements.size() > 0, "The product list is empty");
+        return this;
     }
 
-    public void openProductByOrderNumber(int orderNumber) {
+    public ProductsPage openProductByOrderNumber(int orderNumber) {
         driver.findElement(By.xpath(String.format("%s[%d]/div/div[@class='choose']", productsItem, orderNumber)))
                         .click();
         checkCurrentUrl(Url.PRODUCT_DETAILS_PAGE + orderNumber);
+        return this;
     }
 
-    public void verifyProductDetailsVisibility() {
+    public ProductsPage verifyProductDetailsVisibility() {
         textIsDisplayed(firstProductDetails);
+        return this;
     }
 
-    public void searchProduct() {
+    public ProductsPage searchProduct() {
         waitForElement(searchInput)
                 .sendKeys(firstProductDetails[0]);
         driver.findElement(searchButton)
@@ -56,5 +59,6 @@ public class ProductsPage extends Util {
         List<WebElement> elements = driver.findElements(By.xpath(productsItem));
         Assert.isTrue(elements.size() == 1,
                 String.format("More than 1 element found by \"%s\" search value", firstProductDetails[0]));
+        return this;
     }
 }

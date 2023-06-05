@@ -2,22 +2,19 @@ package Support.Helpers;
 
 import Support.Constans.ContactUsValues;
 import Support.Constans.Url;
-import org.checkerframework.checker.units.qual.C;
 import org.openqa.selenium.By;
 import org.openqa.selenium.InvalidArgumentException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.io.File;
 
 public class ContactUsPage extends Util {
-    private WebDriver driver;
+    static WebDriver driver = DriverInitialization.getDriver();
 
     NavBar navBar = new NavBar(driver);
 
     public ContactUsPage(WebDriver driver) {
         super(driver);
-        this.driver = driver;
     }
 
     private final By nameField = By.xpath("//div[@id='form-section']//input[@data-qa='name']");
@@ -28,20 +25,22 @@ public class ContactUsPage extends Util {
     private final By submitButton = By.xpath("//input[@data-qa='submit-button']");
     private final By homeButton = By.xpath("//a[@class='btn btn-success']");
 
-    public void openContactUsPage() {
+    public ContactUsPage openContactUsPage() {
         driver.findElement(navBar.getContactUsItem())
                 .click();
         textIsDisplayed("Get In Touch");
+        return this;
     }
 
-    public void completeContactUsForm() {
+    public ContactUsPage completeContactUsForm() {
         completeField(nameField, ContactUsValues.NAME);
         completeField(emailField, ContactUsValues.EMAIL);
         completeField(subjectField, ContactUsValues.SUBJECT);
         completeField(messageArea, ContactUsValues.MESSAGE);
+        return this;
     }
 
-    public void uploadFile() {
+    public ContactUsPage uploadFile() {
         File file = new File("src/main/java/Support/Media/chad.jpg");
         try {
             driver.findElement(fileInput)
@@ -49,11 +48,13 @@ public class ContactUsPage extends Util {
         } catch (InvalidArgumentException e) {
             System.err.println("It's weird there's no any other way to check if something goes wrong here. So it is.");
         }
+        return this;
     }
 
-    public void submitForm() {
+    public ContactUsPage submitForm() {
         driver.findElement(submitButton)
                 .click();
+        return this;
     }
 
     public void clickHomeButton() {
