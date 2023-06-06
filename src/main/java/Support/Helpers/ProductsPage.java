@@ -5,6 +5,7 @@ import dev.failsafe.internal.util.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
 
@@ -12,6 +13,7 @@ public class ProductsPage extends Util {
     static WebDriver driver = DriverInitialization.getDriver();
 
     NavBar navBar = new NavBar(driver);
+    Actions action = new Actions(driver);
 
     public ProductsPage(WebDriver driver) {
         super(driver);
@@ -38,9 +40,10 @@ public class ProductsPage extends Util {
         return this;
     }
 
-    public ProductsPage openProductByOrderNumber(int orderNumber) {
-        driver.findElement(By.xpath(String.format("%s[%d]/div/div[@class='choose']", productsItem, orderNumber)))
-                        .click();
+    public ProductsPage viewProduct(int orderNumber) {
+        driver
+                .findElement(By.xpath(String.format("%s[%d]/div/div[@class='choose']", productsItem, orderNumber)))
+                .click();
         checkCurrentUrl(Url.PRODUCT_DETAILS_PAGE + orderNumber);
         return this;
     }
@@ -53,12 +56,34 @@ public class ProductsPage extends Util {
     public ProductsPage searchProduct() {
         waitForElement(searchInput)
                 .sendKeys(firstProductDetails[0]);
-        driver.findElement(searchButton)
+        driver
+                .findElement(searchButton)
                 .click();
+        return this;
+    }
 
+    public ProductsPage productIsFound() {
         List<WebElement> elements = driver.findElements(By.xpath(productsItem));
         Assert.isTrue(elements.size() == 1,
                 String.format("More than 1 element found by \"%s\" search value", firstProductDetails[0]));
         return this;
+    }
+
+    public ProductsPage hoverProduct(int productOrder) {
+        action
+                .moveToElement(findProductByOrderNumber(productOrder))
+                .perform();
+        return this;
+    }
+
+    public ProductsPage addToCard(int orderNumber) {
+        driver
+                .findElement(By.xpath(String.format("//a[@data-product-id='%d']", orderNumber)))
+                .click();
+        return this;
+    }
+
+    private WebElement findProductByOrderNumber(int orderNumber) {
+        return driver.findElement(By.xpath(String.format("%s[%d]", productsItem, orderNumber)));
     }
 }

@@ -30,7 +30,7 @@ public class Util {
         return this;
     }
 
-    public Util textIsDisplayed(String ...text) {
+    public Util textIsDisplayed(String... text) {
         for (String s : text) {
             WebElement enterAccountInformationText = driver.findElement(By.xpath(String.format(
                     "//*[text()='%s']", s)));
@@ -73,8 +73,8 @@ public class Util {
         return this;
     }
 
-    public Util clickButton(String button, String text) {
-        driver.findElement(By.xpath(String.format("//*[@data-qa='%s'][text()='%s']", button, text)))
+    public Util clickButton(String text) {
+        waitForElement(By.xpath(String.format("//button[text()='%s']", text)))
                 .click();
         return this;
     }
@@ -109,6 +109,12 @@ public class Util {
         new Actions(driver)
                 .scrollToElement(element)
                 .perform();
+        return this;
+    }
+
+    public Util clickContinueButton() {
+        driver.findElement(By.xpath("//a[@data-qa='continue-button'][text()='Continue']"))
+                .click();
         return this;
     }
 }

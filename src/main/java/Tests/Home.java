@@ -16,7 +16,8 @@ public class Home {
     @Test
     public void verifySubscriptionBlock() {
         homePage.openHomePage();
-        footer.scrollToFooter()
+        footer
+                .scrollToFooter()
                 .textIsDisplayed("Subscription");
         footer.confirmSubscription();
     }

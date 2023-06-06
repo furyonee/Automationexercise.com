@@ -14,7 +14,8 @@ public class TestCases {
     @Test
     public void verifyTestCasesPage() {
         homePage.openHomePage();
-        testCasesPage.openTestCasesPage()
+        testCasesPage
+                .openTestCasesPage()
                 .pageIsOpened(Url.TEST_CASES_PAGE, "Below is the list of test Cases for you to practice the Automation. " +
                         "Click on the scenario for detailed Test Steps:");
     }

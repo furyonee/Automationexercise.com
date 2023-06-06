@@ -8,6 +8,7 @@ public class LoginPage extends Util {
     static WebDriver driver = DriverInitialization.getDriver();
 
     NavBar navBar = new NavBar(driver);
+    SignUpPage signUpPage = new SignUpPage(driver);
 
     public LoginPage(WebDriver driver) {
         super(driver);
@@ -38,12 +39,12 @@ public class LoginPage extends Util {
     }
 
     public LoginPage clickSignUpButton() {
-        clickButton("signup-button", "Signup");
+        clickButton("Signup");
         return this;
     }
 
     public LoginPage clickLoginButton() {
-        clickButton("login-button", "Login");
+        clickButton("Login");
         return this;
     }
 
@@ -51,7 +52,7 @@ public class LoginPage extends Util {
         waitForElement(navBar.getDeleteAccountItem())
                 .click();
         textIsDisplayed("Account Deleted!");
-        clickButton("continue-button", "Continue");
+        clickContinueButton();
         textIsNotDisplayed(" Logged in as ");
         return this;
     }

@@ -25,6 +25,7 @@ public class SignUpPage extends Util{
     private final By zipcodeField = By.xpath("//*[@data-qa='zipcode']");
     private final By mobileNumberField = By.xpath("//*[@data-qa='mobile_number']");
     private final By maleGender = By.xpath("//*[@type='radio'][@id='id_gender1']");
+    private final By continueButton = By.xpath("//a[@data-qa='continue-button'][text()='Continue']");
 
     public SignUpPage completeAccountInfo() {
         selectRadioButton(maleGender);
@@ -52,17 +53,17 @@ public class SignUpPage extends Util{
     }
 
     public SignUpPage finishAccountCreation() {
-        clickButton("create-account", "Create Account");
+        clickButton("Create Account");
         textIsDisplayed("Account Created!");
-        clickButton("continue-button", "Continue");
+        clickContinueButton();
         return this;
     }
 
     public SignUpPage completeUserInfo() {
         completeAccountInfo();
         completeAddressInfo();
-        clickButton("create-account", "Create Account");
-        clickButton("continue-button", "Continue");
+        clickButton("Create Account");
+        clickContinueButton();
         return this;
     }
 }

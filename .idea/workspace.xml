@@ -4,7 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41034ee6-5f41-4578-8d1a-f92b45e20f23" name="Changes" comment="added tc#10" />
+    <list default="true" id="41034ee6-5f41-4578-8d1a-f92b45e20f23" name="Changes" comment="added tc#11 + refactoring">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testNG/cartSuite.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Support/Helpers/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Support/Helpers/CartPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Support/Helpers/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Support/Helpers/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Support/Helpers/ProductsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Support/Helpers/ProductsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Support/Helpers/SignUpPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Support/Helpers/SignUpPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Support/Helpers/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Support/Helpers/Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Tests/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tests/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Tests/ContactUs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tests/ContactUs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Tests/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tests/Home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Tests/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tests/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Tests/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tests/Products.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Tests/TestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tests/TestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Support/Helpers/LoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Support/Helpers/LoginPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Support/Helpers/ProductsPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Support/Helpers/ProductsPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Support/Helpers/SignUpPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Support/Helpers/SignUpPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Support/Helpers/Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Support/Helpers/Util.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Tests/Cart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Tests/Cart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Tests/ContactUs.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Tests/ContactUs.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Tests/Home.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Tests/Home.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Tests/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Tests/Login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Tests/Products.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Tests/Products.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Tests/TestCases.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Tests/TestCases.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testNG/testngMasterFile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testNG/testngMasterFile.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,6 +70,7 @@
     <option name="version" value="2" />
   </component>
   <component name="ProjectId" id="2QHOAzPBdyeHGDRKfDftc7fKpHC" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -88,6 +115,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="C:/Users/evgeniy.demchenko/SauceDemoSelenium/testNG/productsSuite.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Automationexercise.com" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/testNG/productsSuite.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="C:/Users/evgeniy.demchenko/SauceDemoSelenium/testNG/testCasesSuite.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Automationexercise.com" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/testNG/testCasesSuite.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="C:/Users/evgeniy.demchenko/SauceDemoSelenium/testNG/testngMasterFile.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Automationexercise.com" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/testNG/testngMasterFile.xml" />
@@ -98,7 +145,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Cart" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Cart.addProducts" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Automationexercise.com" />
       <extension name="coverage">
         <pattern>
@@ -108,14 +155,15 @@
       </extension>
       <option name="PACKAGE_NAME" value="Tests" />
       <option name="MAIN_CLASS_NAME" value="Tests.Cart" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="METHOD_NAME" value="addProducts" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Home" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Products.verifyProductsPageContent" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Automationexercise.com" />
       <extension name="coverage">
         <pattern>
@@ -124,42 +172,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Tests" />
-      <option name="MAIN_CLASS_NAME" value="Tests.Home" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Login" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Automationexercise.com" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Tests" />
-      <option name="MAIN_CLASS_NAME" value="Tests.Login" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Login.logOutUser" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Automationexercise.com" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Tests" />
-      <option name="MAIN_CLASS_NAME" value="Tests.Login" />
-      <option name="METHOD_NAME" value="logOutUser" />
+      <option name="MAIN_CLASS_NAME" value="Tests.Products" />
+      <option name="METHOD_NAME" value="verifyProductsPageContent" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -170,10 +184,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.C:/Users/evgeniy.demchenko/SauceDemoSelenium/testNG/testngMasterFile.xml" />
-        <item itemvalue="TestNG.Cart" />
-        <item itemvalue="TestNG.Login" />
-        <item itemvalue="TestNG.Login.logOutUser" />
-        <item itemvalue="TestNG.Home" />
+        <item itemvalue="TestNG.Cart.addProducts" />
+        <item itemvalue="TestNG.C:/Users/evgeniy.demchenko/SauceDemoSelenium/testNG/testCasesSuite.xml" />
+        <item itemvalue="TestNG.C:/Users/evgeniy.demchenko/SauceDemoSelenium/testNG/productsSuite.xml" />
+        <item itemvalue="TestNG.Products.verifyProductsPageContent" />
       </list>
     </recent_temporary>
   </component>
@@ -263,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685878867493</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="added tc#11 + refactoring">
+      <created>1685971669731</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1685971669731</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -277,7 +298,8 @@
     <MESSAGE value="added test cases suit and shot myself in a foot" />
     <MESSAGE value="added product test suit + refactoring" />
     <MESSAGE value="added tc#10" />
-    <option name="LAST_COMMIT_MESSAGE" value="added tc#10" />
+    <MESSAGE value="added tc#11 + refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="added tc#11 + refactoring" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

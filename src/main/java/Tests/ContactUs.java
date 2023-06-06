@@ -13,9 +13,11 @@ public class ContactUs {
     @Test
     public void completeContactUsForm() {
         homePage.openHomePage();
-        contactUsPage.openContactUsPage()
+        contactUsPage
+                .openContactUsPage()
                 .textIsDisplayed("Get In Touch");
-        contactUsPage.completeContactUsForm()
+        contactUsPage
+                .completeContactUsForm()
                 .uploadFile()
                 .submitForm()
                 .confirmAlert()
