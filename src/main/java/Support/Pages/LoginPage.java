@@ -1,6 +1,9 @@
-package Support.Helpers;
+package Support.Pages;
 
 import Support.Constans.Url;
+import Support.Utils.DriverInitialization;
+import Support.Utils.NavBar;
+import Support.Utils.Util;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -44,15 +47,6 @@ public class LoginPage extends Util {
 
     public LoginPage clickLoginButton() {
         clickButton("Login");
-        return this;
-    }
-
-    public LoginPage deleteAccount() {
-        waitForElement(navBar.getDeleteAccountItem())
-                .click();
-        textIsDisplayed("Account Deleted!");
-        clickContinueButton();
-        textIsNotDisplayed(" Logged in as ");
         return this;
     }
 

@@ -4,33 +4,43 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41034ee6-5f41-4578-8d1a-f92b45e20f23" name="Changes" comment="added tc#12 + refactoring">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Support/Constans/PaymentInfo.java" afterDir="false" />
+    <list default="true" id="41034ee6-5f41-4578-8d1a-f92b45e20f23" name="Changes" comment="added tc#13-14">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Support/Utils/Header.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Support/Constans/Url.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Support/Constans/Url.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Support/Helpers/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Support/Helpers/CartPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Support/Helpers/ContactUsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Support/Helpers/ContactUsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Support/Helpers/Footer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Support/Helpers/Footer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Support/Helpers/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Support/Helpers/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Support/Helpers/NavBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Support/Helpers/NavBar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Support/Helpers/ProductsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Support/Helpers/ProductsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Support/Helpers/SignUpPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Support/Helpers/SignUpPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Support/Helpers/TestCasesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Support/Helpers/TestCasesPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Support/Helpers/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Support/Helpers/Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Support/Helpers/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Support/Pages/CartPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Support/Helpers/ContactUsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Support/Pages/ContactUsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Support/Helpers/DriverInitialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Support/Utils/DriverInitialization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Support/Helpers/Footer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Support/Utils/Footer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Support/Helpers/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Support/Pages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Support/Helpers/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Support/Pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Support/Helpers/NavBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Support/Utils/NavBar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Support/Helpers/ProductsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Support/Pages/ProductsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Support/Helpers/SignUpPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Support/Pages/SignUpPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Support/Helpers/TestCasesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Support/Pages/TestCasesPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Support/Helpers/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Support/Utils/Util.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Tests/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tests/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Tests/ContactUs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tests/ContactUs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Tests/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tests/Home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Tests/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tests/Login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Tests/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tests/Products.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Support/Constans/Url.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Support/Constans/Url.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Support/Helpers/CartPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Support/Helpers/CartPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Support/Helpers/ContactUsPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Support/Helpers/ContactUsPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Support/Helpers/Footer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Support/Helpers/Footer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Support/Helpers/LoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Support/Helpers/LoginPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Support/Helpers/NavBar.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Support/Helpers/NavBar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Support/Helpers/ProductsPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Support/Helpers/ProductsPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Support/Helpers/SignUpPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Support/Helpers/SignUpPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Support/Helpers/TestCasesPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Support/Helpers/TestCasesPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Support/Helpers/Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Support/Helpers/Util.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Tests/TestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tests/TestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Support/Helpers/CartPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Support/Helpers/ContactUsPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Support/Helpers/DriverInitialization.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Support/Helpers/Footer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Support/Helpers/HomePage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Support/Helpers/LoginPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Support/Helpers/NavBar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Support/Helpers/ProductsPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Support/Helpers/SignUpPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Support/Helpers/TestCasesPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Support/Helpers/Util.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Tests/Cart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Tests/Cart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Tests/ContactUs.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Tests/ContactUs.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Tests/Home.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Tests/Home.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Tests/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Tests/Login.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Tests/Products.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Tests/Products.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Tests/TestCases.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Tests/TestCases.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +105,7 @@
       <recent name="C:\Users\evgeniy.demchenko\SauceDemoSelenium" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.C:/Users/evgeniy.demchenko/SauceDemoSelenium/testNG/cartSuite.xml">
+  <component name="RunManager" selected="TestNG.C:/Users/evgeniy.demchenko/SauceDemoSelenium/testNG/testngMasterFile.xml">
     <configuration name="Login" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Tests.Login" />
       <module name="Automationexercise.com" />
@@ -116,9 +126,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="C:/Users/evgeniy.demchenko/SauceDemoSelenium/testNG/cartSuite.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="C:/Users/evgeniy.demchenko/SauceDemoSelenium/testNG/contactUsSuite.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Automationexercise.com" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/testNG/cartSuite.xml" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/testNG/contactUsSuite.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="C:/Users/evgeniy.demchenko/SauceDemoSelenium/testNG/homeSuit.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Automationexercise.com" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/testNG/homeSuit.xml" />
       <option name="TEST_OBJECT" value="SUITE" />
       <properties />
       <listeners />
@@ -146,7 +166,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Cart.signUpDuringCheckout" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Home.verifySubscriptionBlock" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Automationexercise.com" />
       <extension name="coverage">
         <pattern>
@@ -155,26 +175,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Tests" />
-      <option name="MAIN_CLASS_NAME" value="Tests.Cart" />
-      <option name="METHOD_NAME" value="signUpDuringCheckout" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Cart.verifyCartProductQuantity" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Automationexercise.com" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Tests" />
-      <option name="MAIN_CLASS_NAME" value="Tests.Cart" />
-      <option name="METHOD_NAME" value="verifyCartProductQuantity" />
+      <option name="MAIN_CLASS_NAME" value="Tests.Home" />
+      <option name="METHOD_NAME" value="verifySubscriptionBlock" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -184,11 +186,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.C:/Users/evgeniy.demchenko/SauceDemoSelenium/testNG/cartSuite.xml" />
-        <item itemvalue="TestNG.Cart.signUpDuringCheckout" />
-        <item itemvalue="TestNG.C:/Users/evgeniy.demchenko/SauceDemoSelenium/testNG/loginSuite.xml" />
         <item itemvalue="TestNG.C:/Users/evgeniy.demchenko/SauceDemoSelenium/testNG/testngMasterFile.xml" />
-        <item itemvalue="TestNG.Cart.verifyCartProductQuantity" />
+        <item itemvalue="TestNG.C:/Users/evgeniy.demchenko/SauceDemoSelenium/testNG/contactUsSuite.xml" />
+        <item itemvalue="TestNG.C:/Users/evgeniy.demchenko/SauceDemoSelenium/testNG/loginSuite.xml" />
+        <item itemvalue="TestNG.C:/Users/evgeniy.demchenko/SauceDemoSelenium/testNG/homeSuit.xml" />
+        <item itemvalue="TestNG.Home.verifySubscriptionBlock" />
       </list>
     </recent_temporary>
   </component>
@@ -292,7 +294,21 @@
       <option name="project" value="LOCAL" />
       <updated>1686043943921</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="added tc#13-14">
+      <created>1686132797899</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1686132797899</updated>
+    </task>
+    <task id="LOCAL-00015" summary="added tc#13-14">
+      <created>1686132813751</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1686132813751</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -308,18 +324,19 @@
     <MESSAGE value="added tc#10" />
     <MESSAGE value="added tc#11 + refactoring" />
     <MESSAGE value="added tc#12 + refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="added tc#12 + refactoring" />
+    <MESSAGE value="added tc#13-14" />
+    <option name="LAST_COMMIT_MESSAGE" value="added tc#13-14" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Support/Helpers/SignUpPage.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/Support/Pages/SignUpPage.java</url>
           <line>40</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Support/Helpers/SignUpPage.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/Support/Pages/SignUpPage.java</url>
           <line>45</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>

@@ -1,7 +1,10 @@
-package Support.Helpers;
+package Support.Pages;
 
 import Support.Constans.ContactUsValues;
 import Support.Constans.Url;
+import Support.Utils.DriverInitialization;
+import Support.Utils.NavBar;
+import Support.Utils.Util;
 import org.openqa.selenium.By;
 import org.openqa.selenium.InvalidArgumentException;
 import org.openqa.selenium.WebDriver;

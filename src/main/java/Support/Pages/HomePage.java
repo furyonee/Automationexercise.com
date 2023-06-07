@@ -1,6 +1,8 @@
-package Support.Helpers;
+package Support.Pages;
 
 import Support.Constans.Url;
+import Support.Utils.DriverInitialization;
+import Support.Utils.Util;
 import org.openqa.selenium.WebDriver;
 
 public class HomePage extends Util {

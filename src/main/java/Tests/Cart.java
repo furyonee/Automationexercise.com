@@ -1,10 +1,10 @@
 package Tests;
 
 import Support.Constans.EntryPage;
-import Support.Helpers.*;
+import Support.Utils.*;
+import Support.Pages.*;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
-
 
 
 public class Cart {
@@ -17,9 +17,10 @@ public class Cart {
     LoginPage loginPage = new LoginPage(driver);
     Util util = new Util(driver);
     SignUpPage signUpPage = new SignUpPage(driver);
+    NavBar navBar = new NavBar(driver);
 
     @BeforeMethod
-    public static void setUp() {
+    public static void clearCookies() {
         driver
                 .manage()
                 .deleteAllCookies();
@@ -103,7 +104,33 @@ public class Cart {
                 .fillPaymentDetails()
                 // Imagine it appears after clicking "Pay and Confirm Order"
                 .containsText("Your order has been placed successfully!")
-                .clickButton("Pay and Confirm Order");
-        loginPage.deleteAccount();
+                .clickButton("Pay and Confirm Order")
+                .textIsDisplayed("Congratulations! Your order has been confirmed!");
+        navBar.deleteAccount();
+    }
+
+    @Test
+    public void signUpBeforeCheckout() {
+        homePage.openHomePage();
+        loginPage
+                .openLoginPage()
+                .completeSignUpUserCredentials(EntryPage.USER_NAME, util.generateRandomValue())
+                .clickSignUpButton();
+        signUpPage
+                .completeAccountInfo()
+                .completeAddressInfo()
+                .finishAccountCreation()
+                .textIsDisplayed(" Logged in as ", EntryPage.USER_NAME)
+                .addToCardFromList(1);
+        cartPage
+                .openViewCartPage()
+                .clickProceedToCheckout()
+                .verifyOrderAddress()
+                .leaveComment()
+                .clickPlaceOrder()
+                .fillPaymentDetails()
+                .clickButton("Pay and Confirm Order")
+                .textIsDisplayed("Congratulations! Your order has been confirmed!");
+        navBar.deleteAccount();
     }
 }

@@ -1,4 +1,4 @@
-package Support.Helpers;
+package Support.Utils;
 
 import Support.Constans.EntryPage;
 import org.openqa.selenium.By;
@@ -17,8 +17,18 @@ public class NavBar extends Util {
     private By productsItem = By.xpath("//ul[@class='nav navbar-nav']/li/a[text()=' Products']");
     private By cartItem = By.xpath("//ul[@class='nav navbar-nav']/li/a[text()=' Cart']");
 
-    public void userIsLoggedIn() {
+    public NavBar userIsLoggedIn() {
         textIsDisplayed(" Logged in as ", EntryPage.USER_NAME);
+        return this;
+    }
+
+    public NavBar deleteAccount() {
+        waitForElement(getDeleteAccountItem())
+                .click();
+        textIsDisplayed("Account Deleted!");
+        clickContinueButton();
+        textIsNotDisplayed(" Logged in as ");
+        return this;
     }
 
     public By getLogoutItem() {

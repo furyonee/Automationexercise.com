@@ -1,8 +1,7 @@
-package Support.Helpers;
+package Support.Utils;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class Footer extends Util{
     public Footer(WebDriver driver) {
@@ -13,9 +12,7 @@ public class Footer extends Util{
     private By subscribeButton = By.xpath("//button[@id='subscribe']");
 
     public Footer scrollToFooter() {
-        WebElement footer = driver.findElement(By.xpath("//footer"));
-
-        scrollTo(footer);
+        scrollTo(driver.findElement(By.xpath("//footer")));
         return this;
     }
 

@@ -1,8 +1,11 @@
-package Support.Helpers;
+package Support.Pages;
 
+import Support.Utils.DriverInitialization;
+import Support.Utils.NavBar;
+import Support.Utils.Util;
 import org.openqa.selenium.WebDriver;
 
-public class TestCasesPage extends Util{
+public class TestCasesPage extends Util {
     static WebDriver driver = DriverInitialization.getDriver();
 
     NavBar navBar = new NavBar(driver);

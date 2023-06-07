@@ -1,9 +1,10 @@
 package Tests;
 
-import Support.Helpers.DriverInitialization;
-import Support.Helpers.Footer;
-import Support.Helpers.HomePage;
+import Support.Utils.*;
+import Support.Pages.HomePage;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 
@@ -12,6 +13,14 @@ public class Home {
 
     HomePage homePage = new HomePage(driver);
     Footer footer = new Footer(driver);
+    Header header = new Header(driver);
+
+    @BeforeMethod
+    public static void clearCookies() {
+        driver
+                .manage()
+                .deleteAllCookies();
+    }
 
     @Test
     public void verifySubscriptionBlock() {
@@ -20,5 +29,6 @@ public class Home {
                 .scrollToFooter()
                 .textIsDisplayed("Subscription");
         footer.confirmSubscription();
+        header.scrollToHeader();
     }
 }

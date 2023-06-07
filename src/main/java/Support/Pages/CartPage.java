@@ -1,7 +1,10 @@
-package Support.Helpers;
+package Support.Pages;
 
 import Support.Constans.PaymentInfo;
 import Support.Constans.Url;
+import Support.Utils.DriverInitialization;
+import Support.Utils.NavBar;
+import Support.Utils.Util;
 import dev.failsafe.internal.util.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -32,6 +35,7 @@ public class CartPage extends Util {
                 .findElement(navBar.getCartItem())
                 .click();
         checkCurrentUrl(Url.VIEW_CART_PAGE);
+        textIsDisplayed("Shopping Cart");
         return this;
     }
 

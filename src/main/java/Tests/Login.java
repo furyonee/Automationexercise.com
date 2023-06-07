@@ -1,7 +1,10 @@
 package Tests;
 
 import Support.Constans.*;
-import Support.Helpers.*;
+import Support.Utils.*;
+import Support.Pages.HomePage;
+import Support.Pages.LoginPage;
+import Support.Pages.SignUpPage;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
@@ -18,9 +21,17 @@ public class Login {
 
     @BeforeClass
     public static void setUp() {
-        driver.manage()
+        driver
+                .manage()
                 .window()
                 .setSize(new Dimension(1366, 720));
+    }
+
+    @BeforeMethod
+    public static void clearCookies() {
+        driver
+                .manage()
+                .deleteAllCookies();
     }
 
     @Test
@@ -35,8 +46,8 @@ public class Login {
                 .completeAccountInfo()
                 .completeAddressInfo()
                 .finishAccountCreation();
-        navBar.userIsLoggedIn();
-        loginPage.deleteAccount();
+        navBar.userIsLoggedIn()
+                .deleteAccount();
     }
 
     @Test
@@ -56,8 +67,8 @@ public class Login {
                 .openLoginPage()
                 .completeLogInUserCredentials(USER_EMAIL, EntryPage.PASSWORD)
                 .clickLoginButton();
-        navBar.userIsLoggedIn();
-        loginPage.deleteAccount();
+        navBar.userIsLoggedIn()
+                .deleteAccount();
     }
 
     @Test
@@ -86,8 +97,8 @@ public class Login {
         // Delete user data
         loginPage
                 .completeLogInUserCredentials(USER_EMAIL, EntryPage.PASSWORD)
-                .clickLoginButton()
-                .deleteAccount();
+                .clickLoginButton();
+        navBar.deleteAccount();
     }
 
     @Test
@@ -110,7 +121,7 @@ public class Login {
         // Delete user data
         loginPage
                 .completeLogInUserCredentials(USER_EMAIL, EntryPage.PASSWORD)
-                .clickLoginButton()
-                .deleteAccount();
+                .clickLoginButton();
+        navBar.deleteAccount();
     }
 }

@@ -1,10 +1,12 @@
-package Support.Helpers;
+package Support.Pages;
 
 import Support.Constans.EntryPage;
+import Support.Utils.DriverInitialization;
+import Support.Utils.Util;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class SignUpPage extends Util{
+public class SignUpPage extends Util {
     public SignUpPage(WebDriver driver) {
         super(driver);
         DriverInitialization.getDriver();

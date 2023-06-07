@@ -1,4 +1,4 @@
-package Support.Helpers;
+package Support.Utils;
 
 import dev.failsafe.internal.util.Assert;
 import org.openqa.selenium.By;

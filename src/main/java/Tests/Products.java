@@ -1,9 +1,13 @@
 package Tests;
 
-import Support.Helpers.DriverInitialization;
-import Support.Helpers.HomePage;
-import Support.Helpers.ProductsPage;
+import Support.Utils.DriverInitialization;
+import Support.Pages.HomePage;
+import Support.Pages.ProductsPage;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class Products {
@@ -11,6 +15,13 @@ public class Products {
 
     HomePage homePage = new HomePage(driver);
     ProductsPage productsPage = new ProductsPage(driver);
+
+    @BeforeMethod
+    public static void clearCookies() {
+        driver
+                .manage()
+                .deleteAllCookies();
+    }
 
     @Test
     public void verifyProductsPageContent() {

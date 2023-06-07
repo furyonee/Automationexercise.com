@@ -1,14 +1,24 @@
 package Tests;
 
-import Support.Helpers.*;
+import Support.Utils.*;
+import Support.Pages.ContactUsPage;
+import Support.Pages.HomePage;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
+
 
 public class ContactUs {
     static WebDriver driver = DriverInitialization.getDriver();
 
     HomePage homePage = new HomePage(driver);
     ContactUsPage contactUsPage = new ContactUsPage(driver);
+
+    @BeforeMethod
+    public static void clearCookies() {
+        driver
+                .manage()
+                .deleteAllCookies();
+    }
 
     @Test
     public void completeContactUsForm() {

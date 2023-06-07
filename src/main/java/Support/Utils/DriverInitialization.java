@@ -1,4 +1,4 @@
-package Support.Helpers;
+package Support.Utils;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
