@@ -8,26 +8,25 @@ public class LoginPage extends Util {
     static WebDriver driver = DriverInitialization.getDriver();
 
     NavBar navBar = new NavBar(driver);
-    SignUpPage signUpPage = new SignUpPage(driver);
 
     public LoginPage(WebDriver driver) {
         super(driver);
     }
 
-    private final By SIGN_UP_NAME_FIELD = By.xpath("//*[@data-qa='signup-name']");
-    private final By SING_UP_EMAIL_FIELD = By.xpath("//*[@data-qa='signup-email']");
-    private final By LOGIN_EMAIL_FIELD = By.xpath("//*[@data-qa='login-email']");
-    private final By LOGIN_PASSWORD_FIELD = By.xpath("//*[@data-qa='login-password']");
+    private By signUpNameField = By.xpath("//*[@data-qa='signup-name']");
+    private By signUpEmailField = By.xpath("//*[@data-qa='signup-email']");
+    private By loginEmailField = By.xpath("//*[@data-qa='login-email']");
+    private By loginPasswordField = By.xpath("//*[@data-qa='login-password']");
 
     public LoginPage completeSignUpUserCredentials(String userName, String email) {
-        completeField(SIGN_UP_NAME_FIELD, userName);
-        completeField(SING_UP_EMAIL_FIELD, email + "@user.email");
+        completeField(signUpNameField, userName);
+        completeField(signUpEmailField, email + "@user.email");
         return this;
     }
 
     public LoginPage completeLogInUserCredentials(String email, String password) {
-        completeField(LOGIN_EMAIL_FIELD, email + "@user.email");
-        completeField(LOGIN_PASSWORD_FIELD, password);
+        completeField(loginEmailField, email + "@user.email");
+        completeField(loginPasswordField, password);
         return this;
     }
 

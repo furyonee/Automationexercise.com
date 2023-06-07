@@ -19,12 +19,12 @@ public class ProductsPage extends Util {
         super(driver);
     }
 
-    private final By productItems = By.xpath("//div[@class='features_items']");
-    private final By searchInput = By.xpath("//input[@id='search_product']");
-    private final By searchButton = By.xpath("//button[@id='submit_search']");
-    private final String productsItem = "//div[@class='features_items']/div[@class='col-sm-4']";
-    private final String[] firstProductDetails = {"Blue Top", "Category: Women > Tops", "Rs. 500", "Availability:",
-            " In Stock", "Brand:", " Polo"};
+    private By productItems = By.xpath("//div[@class='features_items']");
+    private By searchInput = By.xpath("//input[@id='search_product']");
+    private By searchButton = By.xpath("//button[@id='submit_search']");
+    private By quantityField = By.xpath("//div[@class='product-information']/span/input[@id='quantity']");
+    private String productsItem = "//div[@class='features_items']/div[@class='col-sm-4']";
+
 
     public ProductsPage openProductsPage() {
         waitForElement(navBar.getProductsItem())
@@ -48,24 +48,19 @@ public class ProductsPage extends Util {
         return this;
     }
 
-    public ProductsPage verifyProductDetailsVisibility() {
-        textIsDisplayed(firstProductDetails);
-        return this;
-    }
-
-    public ProductsPage searchProduct() {
+    public ProductsPage searchProduct(String productName) {
         waitForElement(searchInput)
-                .sendKeys(firstProductDetails[0]);
+                .sendKeys(productName);
         driver
                 .findElement(searchButton)
                 .click();
         return this;
     }
 
-    public ProductsPage productIsFound() {
+    public ProductsPage productIsFound(String productName) {
         List<WebElement> elements = driver.findElements(By.xpath(productsItem));
         Assert.isTrue(elements.size() == 1,
-                String.format("More than 1 element found by \"%s\" search value", firstProductDetails[0]));
+                String.format("More than 1 element found by \"%s\" search value", productName));
         return this;
     }
 
@@ -76,10 +71,18 @@ public class ProductsPage extends Util {
         return this;
     }
 
-    public ProductsPage addToCard(int orderNumber) {
+    public ProductsPage addToCard() {
         driver
-                .findElement(By.xpath(String.format("//a[@data-product-id='%d']", orderNumber)))
+                .findElement(By.xpath("//button[@class='btn btn-default cart']"))
                 .click();
+        return this;
+    }
+
+    public ProductsPage increaseQuantityTo(int quantity) {
+        driver.findElement(quantityField)
+                .clear();
+        driver.findElement(quantityField)
+                .sendKeys(String.format("%d", quantity));
         return this;
     }
 

@@ -47,28 +47,40 @@ public class Util {
         return this;
     }
 
+    public Util containsText(String text) {
+        driver.findElement(By.xpath(String.format("//div[contains(text(), '%s')]", text)))
+                .isDisplayed();
+        return this;
+    }
+
+
     public Util completeField(By field, String value) {
-        driver.findElement(field)
+        driver
+                .findElement(field)
                 .sendKeys(value);
         return this;
     }
 
     public Util selectRadioButton(By value) {
-        driver.findElement(value)
+        driver
+                .findElement(value)
                 .click();
         return this;
     }
 
     public Util selectValueFromList(By field, String value) {
-        driver.findElement(field)
+        driver
+                .findElement(field)
                 .click();
-        driver.findElement(By.xpath(String.format("//option[@value='%s']", value)))
+        driver
+                .findElement(By.xpath(String.format("//option[@value='%s']", value)))
                 .click();
         return this;
     }
 
     public Util selectCheckbox(String value) {
-        driver.findElement(By.xpath(String.format("//div[@class='checkbox']/label[text()='%s']", value)))
+        driver
+                .findElement(By.xpath(String.format("//div[@class='checkbox']/label[text()='%s']", value)))
                 .click();
         return this;
     }
@@ -94,7 +106,8 @@ public class Util {
     }
 
     public Util confirmAlert() {
-        driver.switchTo()
+        driver
+                .switchTo()
                 .alert()
                 .accept();
         return this;
@@ -117,4 +130,13 @@ public class Util {
                 .click();
         return this;
     }
+
+    public Util addToCardFromList(int orderNumber) {
+        driver
+                .findElement(By.xpath(String.format("//a[@data-product-id='%d']", orderNumber)))
+                .click();
+        return this;
+    }
+
+
 }

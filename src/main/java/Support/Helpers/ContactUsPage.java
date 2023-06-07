@@ -17,16 +17,17 @@ public class ContactUsPage extends Util {
         super(driver);
     }
 
-    private final By nameField = By.xpath("//div[@id='form-section']//input[@data-qa='name']");
-    private final By emailField = By.xpath("//div[@id='form-section']//input[@data-qa='email']");
-    private final By subjectField = By.xpath("//div[@id='form-section']//input[@data-qa='subject']");
-    private final By messageArea = By.xpath("//div[@id='form-section']//textarea[@data-qa='message']");
-    private final By fileInput = By.xpath("//input[@type='file']");
-    private final By submitButton = By.xpath("//input[@data-qa='submit-button']");
-    private final By homeButton = By.xpath("//a[@class='btn btn-success']");
+    private By nameField = By.xpath("//div[@id='form-section']//input[@data-qa='name']");
+    private By emailField = By.xpath("//div[@id='form-section']//input[@data-qa='email']");
+    private By subjectField = By.xpath("//div[@id='form-section']//input[@data-qa='subject']");
+    private By messageArea = By.xpath("//div[@id='form-section']//textarea[@data-qa='message']");
+    private By fileInput = By.xpath("//input[@type='file']");
+    private By submitButton = By.xpath("//input[@data-qa='submit-button']");
+    private By homeButton = By.xpath("//a[@class='btn btn-success']");
 
     public ContactUsPage openContactUsPage() {
-        driver.findElement(navBar.getContactUsItem())
+        driver
+                .findElement(navBar.getContactUsItem())
                 .click();
         textIsDisplayed("Get In Touch");
         return this;
@@ -43,7 +44,8 @@ public class ContactUsPage extends Util {
     public ContactUsPage uploadFile() {
         File file = new File("src/main/java/Support/Media/chad.jpg");
         try {
-            driver.findElement(fileInput)
+            driver
+                    .findElement(fileInput)
                     .sendKeys(file.getAbsolutePath());
         } catch (InvalidArgumentException e) {
             System.err.println("It's weird there's no any other way to check if something goes wrong here. So it is.");
@@ -52,7 +54,8 @@ public class ContactUsPage extends Util {
     }
 
     public ContactUsPage submitForm() {
-        driver.findElement(submitButton)
+        driver
+                .findElement(submitButton)
                 .click();
         return this;
     }

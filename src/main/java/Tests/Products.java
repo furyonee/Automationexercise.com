@@ -19,15 +19,25 @@ public class Products {
                 .openProductsPage()
                 .productsListIsVisible()
                 .viewProduct(1)
-                .verifyProductDetailsVisibility();
+                .textIsDisplayed(
+                        "Blue Top",
+                        "Category: Women > Tops",
+                        "Rs. 500",
+                        "Availability:",
+                        " In Stock",
+                        "Brand:",
+                        " Polo"
+                );
     }
 
     @Test
     public void searchProduct() {
+        final String PRODUCT_NAME = "Blue Top";
+
         homePage.openHomePage();
         productsPage
                 .openProductsPage()
-                .searchProduct()
-                .productIsFound();
+                .searchProduct(PRODUCT_NAME)
+                .productIsFound(PRODUCT_NAME);
     }
 }

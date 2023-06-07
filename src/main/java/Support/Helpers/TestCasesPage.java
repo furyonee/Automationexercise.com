@@ -13,7 +13,8 @@ public class TestCasesPage extends Util{
     }
 
     public TestCasesPage openTestCasesPage() {
-        driver.findElement(navBar.getTestCasesItem())
+        driver
+                .findElement(navBar.getTestCasesItem())
                 .click();
         textIsDisplayed("Below is the list of test Cases for you to practice the Automation. Click on the scenario for detailed Test Steps:");
         return this;

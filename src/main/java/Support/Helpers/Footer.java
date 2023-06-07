@@ -9,8 +9,8 @@ public class Footer extends Util{
         super(driver);
     }
 
-    private final By SUBSCRIPTION_EMAIL_FIELD = By.xpath("//input[@id='susbscribe_email']");
-    private final By SUBSCRIBE_BUTTON = By.xpath("//button[@id='subscribe']");
+    private By subscriptionEmailField = By.xpath("//input[@id='susbscribe_email']");
+    private By subscribeButton = By.xpath("//button[@id='subscribe']");
 
     public Footer scrollToFooter() {
         WebElement footer = driver.findElement(By.xpath("//footer"));
@@ -22,8 +22,9 @@ public class Footer extends Util{
     public Footer confirmSubscription() {
         final String USER_EMAIL = generateRandomValue();
 
-        completeField(SUBSCRIPTION_EMAIL_FIELD, USER_EMAIL + "@mail.com");
-        driver.findElement(SUBSCRIBE_BUTTON)
+        completeField(subscriptionEmailField, USER_EMAIL + "@mail.com");
+        driver
+                .findElement(subscribeButton)
                 .click();
         textIsDisplayed("You have been successfully subscribed!");
         return this;

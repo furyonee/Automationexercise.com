@@ -9,13 +9,13 @@ public class NavBar extends Util {
         super(driver);
     }
 
-    private final By logoutItem = By.xpath("//ul[@class='nav navbar-nav']/li/a[text()=' Logout']");
-    private final By deleteAccountItem = By.xpath("//ul[@class='nav navbar-nav']/li/a[text()=' Delete Account']");
-    private final By signUpItem = By.xpath("//ul[@class='nav navbar-nav']/li/a[text()=' Signup / Login']");
-    private final By contactUsItem = By.xpath("//ul[@class='nav navbar-nav']/li/a[text()=' Contact us']");
-    private final By testCasesItem = By.xpath("//ul[@class='nav navbar-nav']/li/a[text()=' Test Cases']");
-    private final By productsItem = By.xpath("//ul[@class='nav navbar-nav']/li/a[text()=' Products']");
-    private final By cartItem = By.xpath("//ul[@class='nav navbar-nav']/li/a[text()=' Cart']");
+    private By logoutItem = By.xpath("//ul[@class='nav navbar-nav']/li/a[text()=' Logout']");
+    private By deleteAccountItem = By.xpath("//ul[@class='nav navbar-nav']/li/a[text()=' Delete Account']");
+    private By signUpItem = By.xpath("//ul[@class='nav navbar-nav']/li/a[text()=' Signup / Login']");
+    private By contactUsItem = By.xpath("//ul[@class='nav navbar-nav']/li/a[text()=' Contact us']");
+    private By testCasesItem = By.xpath("//ul[@class='nav navbar-nav']/li/a[text()=' Test Cases']");
+    private By productsItem = By.xpath("//ul[@class='nav navbar-nav']/li/a[text()=' Products']");
+    private By cartItem = By.xpath("//ul[@class='nav navbar-nav']/li/a[text()=' Cart']");
 
     public void userIsLoggedIn() {
         textIsDisplayed(" Logged in as ", EntryPage.USER_NAME);
