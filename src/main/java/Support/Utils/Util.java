@@ -2,6 +2,7 @@ package Support.Utils;
 
 import dev.failsafe.internal.util.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -119,9 +120,13 @@ public class Util {
     }
 
     public Util scrollTo(WebElement element) {
-        new Actions(driver)
-                .scrollToElement(element)
-                .perform();
+        try {
+            new Actions(driver)
+                    .scrollToElement(element)
+                    .perform();
+        } catch (TimeoutException e) {
+            System.out.println("Here");
+        }
         return this;
     }
 
@@ -137,6 +142,4 @@ public class Util {
                 .click();
         return this;
     }
-
-
 }

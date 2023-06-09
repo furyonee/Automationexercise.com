@@ -4,43 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41034ee6-5f41-4578-8d1a-f92b45e20f23" name="Changes" comment="added tc#13-14">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Support/Utils/Header.java" afterDir="false" />
+    <list default="true" id="41034ee6-5f41-4578-8d1a-f92b45e20f23" name="Changes" comment="added tc#15">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Support/Helpers/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Support/Pages/CartPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Support/Helpers/ContactUsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Support/Pages/ContactUsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Support/Helpers/DriverInitialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Support/Utils/DriverInitialization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Support/Helpers/Footer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Support/Utils/Footer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Support/Helpers/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Support/Pages/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Support/Helpers/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Support/Pages/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Support/Helpers/NavBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Support/Utils/NavBar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Support/Helpers/ProductsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Support/Pages/ProductsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Support/Helpers/SignUpPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Support/Pages/SignUpPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Support/Helpers/TestCasesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Support/Pages/TestCasesPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Support/Helpers/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Support/Utils/Util.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Tests/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tests/Cart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Tests/ContactUs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tests/ContactUs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Support/Utils/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Support/Utils/Util.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Tests/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tests/Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Tests/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tests/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Tests/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tests/Products.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Tests/TestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tests/TestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Support/Helpers/CartPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Support/Helpers/ContactUsPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Support/Helpers/DriverInitialization.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Support/Helpers/Footer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Support/Helpers/HomePage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Support/Helpers/LoginPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Support/Helpers/NavBar.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Support/Helpers/ProductsPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Support/Helpers/SignUpPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Support/Helpers/TestCasesPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Support/Helpers/Util.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Tests/Cart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Tests/Cart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Tests/ContactUs.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Tests/ContactUs.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Tests/Home.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Tests/Home.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Tests/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Tests/Login.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Tests/Products.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Tests/Products.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Tests/TestCases.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Tests/TestCases.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -308,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686132813751</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="added tc#15">
+      <created>1686147401148</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1686147401148</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -325,7 +299,8 @@
     <MESSAGE value="added tc#11 + refactoring" />
     <MESSAGE value="added tc#12 + refactoring" />
     <MESSAGE value="added tc#13-14" />
-    <option name="LAST_COMMIT_MESSAGE" value="added tc#13-14" />
+    <MESSAGE value="added tc#15" />
+    <option name="LAST_COMMIT_MESSAGE" value="added tc#15" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
