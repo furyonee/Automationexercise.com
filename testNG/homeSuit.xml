@@ -2,7 +2,7 @@
 <suite name="Home Suite">
     <test name="Home Suite">
         <classes>
-            <class name="Tests.Home"/>
+            <class name="tests.HomeTest"/>
         </classes>
     </test>
 </suite>

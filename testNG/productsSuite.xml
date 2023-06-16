@@ -2,7 +2,7 @@
 <suite name="Products Suite">
     <test name="Products Suite">
         <classes>
-            <class name="Tests.Products">
+            <class name="tests.ProductsTest">
                 <methods>
                     <include name="verifyProductsPageContent"/>
                     <include name="searchProduct"/>

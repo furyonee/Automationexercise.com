@@ -2,7 +2,7 @@
 <suite name="Login Suite">
     <test name="Login Suite">
         <classes>
-            <class name="Tests.Login">
+            <class name="tests.LoginTest">
                 <methods>
                     <include name="registerUser" />
                     <include name="loginUser" />

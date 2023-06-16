@@ -2,7 +2,7 @@
 <suite name="Contact Us Suite">
     <test name="Contact Us Suite">
         <classes>
-            <class name="Tests.ContactUs"/>
+            <class name="tests.ContactUsTest"/>
         </classes>
     </test>
 </suite>
